@@ -39,36 +39,69 @@
         <ul></ul>
       </nav>
       <section>
-        <h2>
-<a id="1st-step" class="anchor" href="#1st-step" aria-hidden="true"><span class="octicon octicon-link"></span></a>1st Step</h2>
+        <h1>
+<a id="mvcフレームワークを作りながら構造を理解する" class="anchor" href="#mvc%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%AA%E3%81%8C%E3%82%89%E6%A7%8B%E9%80%A0%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVCフレームワークを作りながら構造を理解する</h1>
 
-<p>各クラスの役割とメソッドを確認</p>
+<p>パーフェクトPHP掲載のMVCフレームワークサンプルをもとに動作確認をしながら進めるためのサンプル。
+パーフェクトPHP内では各クラスがひとまとめに記述されていて動作を確認しながら機能を構築出来るようStepにわけてまとめました。</p>
+
+<p><strong>今回利用させていただくサンプルコードの書籍「パーフェクトPHP」(<a href="http://gihyo.jp/book/2010/978-4-7741-4437-5">http://gihyo.jp/book/2010/978-4-7741-4437-5</a>)</strong></p>
+
+<h2>
+<a id="1st-step-各クラスの役割とメソッドを確認" class="anchor" href="#1st-step-%E5%90%84%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E5%BD%B9%E5%89%B2%E3%81%A8%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E7%A2%BA%E8%AA%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>1st Step 各クラスの役割とメソッドを確認</h2>
 
 <h3>
 <a id="クラス構造" class="anchor" href="#%E3%82%AF%E3%83%A9%E3%82%B9%E6%A7%8B%E9%80%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>クラス構造</h3>
 
-<ul>
-<li><p>Request
-ユーザリクエストを管理する。POST,GETなどの取得。またリクエストURLを整形する。</p></li>
-<li><p>Router
-Requestクラスから整形されたURLを受取り、コントローラの選択をする。</p></li>
-<li><p>Response
-最終的にユーザーリクエストに対するレスポンスを返す。</p></li>
-<li><p>DbManager
-データベースへの接続情報やDbRepositoryクラスの管理を行う。</p></li>
-<li><p>DbRepository
-データベースへのアクセスを Read/Writeを行うクラス。実装する際はDBテーブルごとに拡張されて実装される。モデルに相当する部分。（今回はテーブル単位にモデルを作成します）</p></li>
-<li><p>Controller
-モデル、ビューに関する制御を行うクラス。モデル、ビューに関する制御を一画面単位でアクションメソッドとして実装する。</p></li>
-<li><p>View
-表示の制御を行うクラス。</p></li>
-<li><p>Session
-セッション管理を行うクラス。</p></li>
-<li><p>Application
-アプリケーション全体を管理するクラス。全体の流れをこのクラスで制御する。</p></li>
-<li><p>ClassLoaser
-クラス定義ファイルを自動で読み込むためのクラス。</p></li>
-</ul>
+<h3>
+<a id="request" class="anchor" href="#request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Request</h3>
+
+<p>ユーザリクエストを管理する。POST,GETなどの取得。またリクエストURLを整形する。</p>
+
+<h3>
+<a id="router" class="anchor" href="#router" aria-hidden="true"><span class="octicon octicon-link"></span></a>Router</h3>
+
+<p>Requestクラスから整形されたURLを受取り、コントローラの選択をする。</p>
+
+<h3>
+<a id="response" class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
+
+<p>最終的にユーザーリクエストに対するレスポンスを返す。</p>
+
+<h3>
+<a id="dbmanager" class="anchor" href="#dbmanager" aria-hidden="true"><span class="octicon octicon-link"></span></a>DbManager</h3>
+
+<p>データベースへの接続情報やDbRepositoryクラスの管理を行う。</p>
+
+<h3>
+<a id="dbrepository" class="anchor" href="#dbrepository" aria-hidden="true"><span class="octicon octicon-link"></span></a>DbRepository</h3>
+
+<p>データベースへのアクセスを Read/Writeを行うクラス。実装する際はDBテーブルごとに拡張されて実装される。モデルに相当する部分。（今回はテーブル単位にモデルを作成します）</p>
+
+<h3>
+<a id="controller" class="anchor" href="#controller" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controller</h3>
+
+<p>モデル、ビューに関する制御を行うクラス。モデル、ビューに関する制御を一画面単位でアクションメソッドとして実装する。</p>
+
+<h3>
+<a id="view" class="anchor" href="#view" aria-hidden="true"><span class="octicon octicon-link"></span></a>View</h3>
+
+<p>表示の制御を行うクラス。</p>
+
+<h3>
+<a id="session" class="anchor" href="#session" aria-hidden="true"><span class="octicon octicon-link"></span></a>Session</h3>
+
+<p>セッション管理を行うクラス。</p>
+
+<h3>
+<a id="application" class="anchor" href="#application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application</h3>
+
+<p>アプリケーション全体を管理するクラス。全体の流れをこのクラスで制御する。</p>
+
+<h3>
+<a id="classloaser" class="anchor" href="#classloaser" aria-hidden="true"><span class="octicon octicon-link"></span></a>ClassLoaser</h3>
+
+<p>クラス定義ファイルを自動で読み込むためのクラス。</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/nobu222">nobu222</a></p>
