@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Make.framework by nobu222</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Make.framework</h1>
+        <p>make framework from Perfect PHP Book sample</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/nobu222/make.framework" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/nobu222/make.framework/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/nobu222/make.framework/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h2>
+<a id="1st-step" class="anchor" href="#1st-step" aria-hidden="true"><span class="octicon octicon-link"></span></a>1st Step</h2>
+
+<p>各クラスの役割とメソッドを確認</p>
+
+<h3>
+<a id="クラス構造" class="anchor" href="#%E3%82%AF%E3%83%A9%E3%82%B9%E6%A7%8B%E9%80%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>クラス構造</h3>
+
+<ul>
+<li><p>Request
+ユーザリクエストを管理する。POST,GETなどの取得。またリクエストURLを整形する。</p></li>
+<li><p>Router
+Requestクラスから整形されたURLを受取り、コントローラの選択をする。</p></li>
+<li><p>Response
+最終的にユーザーリクエストに対するレスポンスを返す。</p></li>
+<li><p>DbManager
+データベースへの接続情報やDbRepositoryクラスの管理を行う。</p></li>
+<li><p>DbRepository
+データベースへのアクセスを Read/Writeを行うクラス。実装する際はDBテーブルごとに拡張されて実装される。モデルに相当する部分。（今回はテーブル単位にモデルを作成します）</p></li>
+<li><p>Controller
+モデル、ビューに関する制御を行うクラス。モデル、ビューに関する制御を一画面単位でアクションメソッドとして実装する。</p></li>
+<li><p>View
+表示の制御を行うクラス。</p></li>
+<li><p>Session
+セッション管理を行うクラス。</p></li>
+<li><p>Application
+アプリケーション全体を管理するクラス。全体の流れをこのクラスで制御する。</p></li>
+<li><p>ClassLoaser
+クラス定義ファイルを自動で読み込むためのクラス。</p></li>
+</ul>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/nobu222">nobu222</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-59523535-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
