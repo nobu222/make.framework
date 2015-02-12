@@ -82,6 +82,8 @@ class Request
 
     /**
      * リクエストURIを取得
+     * $_SERVER['REQUEST_URI'] ドメインを除いたURI   
+     * ex) www.example.com/foo/bar/index.php=>/foo/bar/index.php
      *
      * @return string
      */
@@ -92,6 +94,8 @@ class Request
 
     /**
      * ベースURLを取得
+     * $_SERVER['SCRIPT_NAME'] 実行ファイル
+     * ex) www.example.com/foo/bar/index.php=>/index.php
      *
      * @return string
      */
