@@ -116,7 +116,8 @@ class Request
 
     /**
      * PATH_INFOを取得
-     *
+     * 実行ファイルがあるパターンと無いパターンがある   
+     * 
      * @return string
      */
     public function getPathInfo()
